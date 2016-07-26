@@ -1,0 +1,98 @@
+# File Name: calculator.kv
+<Button>:
+	size_hint: .167, .0909
+	font_size: 32
+
+<Calculator>:
+	id: calculator
+	display: input
+
+	FloatLayout:
+		TextInput:
+			id: input
+			size_hint: 1, .2727
+			pos_hint: {'x': 0, 'top': 1}
+			readonly: True
+			multiline: False
+			font_size: 32
+
+		Button:
+			text: 'AC'
+			pos_hint: {'x': 0, 'top': .833}
+			on_press: calculator.erase()
+		Button:
+			text: '%'
+			pos_hint: {'x': .25, 'top': .833}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '/'
+			pos_hint: {'x': .5, 'top': .833}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '<X'
+			pos_hint: {'x': .75, 'top': .833}
+			on_press: calculator.back_one(input.text)
+		Button:
+			text: '7'
+			pos_hint: {'x': 0, 'top': .666}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '8'
+			pos_hint: {'x': .25, 'top': .666}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '9'
+			pos_hint: {'x': .5, 'top': .666}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '*'
+			pos_hint: {'x': .75, 'top': .666}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '4'
+			pos_hint: {'x': 0, 'top': .5}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '5'
+			pos_hint: {'x': .25, 'top': .5}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '6'
+			pos_hint: {'x': .5, 'top': .5}
+			on_press: calculator.input_char(self.text)		
+		Button:
+			text: '-'
+			pos_hint: {'x': .75, 'top': .5}
+			on_press: calculator.input_char(self.text)		
+		Button:
+			text: '1'
+			pos_hint: {'x': 0, 'top': .333}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '2'
+			pos_hint: {'x': .25, 'top': .333}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '3'
+			pos_hint: {'x': .5, 'top': .333}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '+'
+			pos_hint: {'x': .75, 'top': .333}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '0'
+			pos_hint: {'x': 0, 'top': .167}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '.'
+			pos_hint: {'x': .25, 'top': .167}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '^'
+			pos_hint: {'x': .5, 'top': .167}
+			on_press: calculator.input_char(self.text)
+		Button:
+			text: '='
+			pos_hint: {'x': .75, 'top': .167}
+			on_press: calculator.calculate(input.text)
